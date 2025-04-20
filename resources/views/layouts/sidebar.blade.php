@@ -1,11 +1,10 @@
-
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
 
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="{{ route('home') }}">
         <i class="bi bi-grid"></i>
         <span>Dashboard</span>
       </a>
@@ -21,45 +20,55 @@
 
     <!-- Menu Terima Event -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="{{ route('terimaevent' ) }}">
+      <a class="nav-link collapsed" href="{{ route('terimaevent') }}">
         <i class="bi bi-calendar-check"></i>
         <span>Terima Event</span>
       </a>
     </li><!-- End Terima Event Nav -->
 
     <!-- Menu Data Event -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="{{ route('dataevent') }}">
-    <i class="bi bi-database"></i>
-    <span>Data Event</span>
-  </a>
-</li><!-- End Data Event Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('dataevent') }}">
+        <i class="bi bi-database"></i>
+        <span>Data Event</span>
+      </a>
+    </li><!-- End Data Event Nav -->
 
-<!-- Menu Terima Usaha -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="{{ route('terimausaha') }}">
-    <i class="bi bi-check-circle"></i>
-    <span>Terima Usaha</span>
-  </a>
-</li><!-- End Terima Usaha Nav -->
+    <!-- Menu Terima Usaha -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('terimausaha') }}">
+        <i class="bi bi-check-circle"></i>
+        <span>Terima Usaha</span>
+      </a>
+    </li><!-- End Terima Usaha Nav -->
 
-<!-- Menu Data Usaha -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="{{ route('datausaha') }}">
-    <i class="bi bi-briefcase"></i>
-    <span>Data Usaha</span>
-  </a>
-</li><!-- End Data Usaha Nav -->
+    <!-- Menu Data Usaha -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('datausaha') }}">
+        <i class="bi bi-briefcase"></i>
+        <span>Data Usaha</span>
+      </a>
+    </li><!-- End Data Usaha Nav -->
 
-<!-- Menu Profil -->
-<li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
-          <span>Profile</span>
-        </a>
-      </li><!-- End Profil Nav -->
+    <!-- Menu Profil -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('profil') }}">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </a>
+    </li><!-- End Profil Nav -->
 
-
+    <!-- Menu Keluar -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Keluar</span>
+      </a>
+      <!-- Logout Form -->
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
+    </li><!-- End Keluar Nav -->
 
   </ul>
 

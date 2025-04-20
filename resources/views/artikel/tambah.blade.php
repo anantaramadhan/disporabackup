@@ -3,6 +3,7 @@
 
 @include('layouts.head')
 
+@include('layouts.scripts')
 
 <body>
 
@@ -44,17 +45,27 @@
             <input class="form-control" type="file" id="foto" name="foto" accept="image/*" required>
           </div>
 
-          <!-- Tombol Simpan -->
-          <button type="submit" class="btn btn-success">
-            <i class="bi bi-check-lg"></i> Simpan Artikel
-          </button>
+          <!-- Tombol Aksi -->
+          <div class="d-flex justify-content-between">
+            <!-- Tombol Kembali -->
+            <a href="/artikel" class="btn btn-secondary">
+              <i class="bi bi-arrow-left"></i> Kembali
+            </a>
+
+            <!-- Tombol Batal dan Simpan -->
+            <div>
+              <button type="reset" class="btn btn-danger me-2">
+                <i class="bi bi-x-circle"></i> Batal
+              </button>
+              <button type="submit" class="btn btn-success">
+                <i class="bi bi-check-lg"></i> Simpan Artikel
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
 
   </main>
-
-  @include('layouts.scripts')
-
 </body>
 </html>
