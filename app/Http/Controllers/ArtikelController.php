@@ -10,4 +10,10 @@ class ArtikelController extends Controller
         // Kembalikan tampilan untuk form tambah artikel
         return view('artikel.tambah');
     }
+
+    public function edit()
+    {
+        // Kembalikan tampilan untuk form tambah artikel
+        return view('artikel.edit');
+    }
 }

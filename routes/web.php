@@ -20,7 +20,7 @@ Route::get('/home', [FrontendController::class, 'index'])->name('home');
 //Route Artikel
 Route::get('/artikel', [FrontendController::class, 'artikel'])->name('artikel');
 Route::get('/artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
-
+Route::get('/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
 
 //Route Terima Event
 Route::get('/terimaevent', [FrontendController::class, 'terimaevent'])->name('terimaevent');

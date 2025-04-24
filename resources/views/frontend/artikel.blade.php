@@ -65,7 +65,7 @@
             <h5 class="card-title" style="font-size: 1.1rem;">Judul Artikel {{ $i }}</h5>
             <p class="card-text" style="font-size: 0.9rem;">Keterangan artikel singkat {{ $i }}.</p>
             <div class="d-flex justify-content-start gap-2">
-              <a href="#" class="btn btn-primary btn-sm">
+              <a href="{{ route('artikel.edit') }}" class="btn btn-primary btn-sm">
                 <i class="bi bi-pencil-square"></i> Edit
               </a>
               <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Apakah Anda yakin ingin menghapus artikel ini?')">
