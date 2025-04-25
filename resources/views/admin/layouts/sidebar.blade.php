@@ -50,6 +50,17 @@
       </a>
     </li><!-- End Data Usaha Nav -->
 
+
+    <!-- Menu Data Sektor -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('datasektor') }}">
+        <i class="bi bi-briefcase"></i>
+        <span>Data Sektor</span>
+      </a>
+    </li><!-- End Data Sektor Nav -->
+
+
+
     <!-- Menu Profil -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('profil') }}">
@@ -72,6 +83,6 @@
 
   </ul>
 
-  @include('layouts.scripts')
+  @include('admin.layouts.scripts')
 
 </aside><!-- End Sidebar -->

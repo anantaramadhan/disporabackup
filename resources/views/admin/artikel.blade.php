@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('layouts.head')
-@include('layouts.scripts')
+@include('admin.layouts.head')
+@include('admin.layouts.scripts')
 
 <body>
 
-  @include('layouts.header')
-  @include('layouts.sidebar')
+  @include('admin.layouts.header')
+  @include('admin.layouts.sidebar')
+
 
   <main id="main" class="main">
 

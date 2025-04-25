@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('layouts.head')
+@include('admin.layouts.head')
 
-@include('layouts.scripts')
+@include('admin.layouts.scripts')
 
 <body>
 
-  @include('layouts.header')
-  @include('layouts.sidebar')
+  @include('admin.layouts.header')
+  @include('admin.layouts.sidebar')
 
   <main id="main" class="main">
 
     <!-- Page Title -->
     <div class="pagetitle mb-4">
-      <h1>Edit Artikel</h1>
+      <h1>Tambah Artikel</h1>
     </div>
 
     <!-- Form Tambah Artikel -->
