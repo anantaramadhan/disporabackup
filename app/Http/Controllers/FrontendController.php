@@ -3,7 +3,10 @@
 
 namespace App\Http\Controllers;
 
+// use view;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+
 
 class FrontendController extends Controller
 {
@@ -20,7 +23,7 @@ class FrontendController extends Controller
         return view('frontend.artikel');
     }
 
-    
+
     // Artikel terima event
    public function terimaevent  ()
     {
@@ -37,24 +40,24 @@ class FrontendController extends Controller
 
    public function terimaUsaha()
     {
-        
+
         return view('frontend.terimausaha');
     }
 
     public function dataUsaha()
     {
-       
+
         return view('frontend.datausaha');
     }
 
     public function profil()
     {
-        
+
         return view('frontend.profil');
     }
 
-   
+
 }
 
 
-    
+

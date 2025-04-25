@@ -3,13 +3,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Ekraf.In</title>
+  <title>Nganjuk.Ekraf</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
  <!-- Favicon -->
-<link href="{{ asset('assets/img/logoekraf.png') }}" rel="icon">
-<link href="{{ asset('assets/img/logoekraf.png') }}" rel="apple-touch-icon">
+<link href="{{ asset('assets/img/iconEkraf.svg') }}" rel="icon">
+<link href="{{ asset('assets/img/iconEkraf.svg') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -26,6 +26,9 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+  {{-- custom css --}}
+  <link href="{{asset('asset/css/custom.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin

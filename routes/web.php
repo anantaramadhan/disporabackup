@@ -1,10 +1,11 @@
 <?php
 
 
-use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\BackendController;
-use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\BackendController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Auth\LoginController;
 
 
 //Route login
@@ -16,6 +17,9 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 // Route dashboard
 Route::get('/home', [FrontendController::class, 'index'])->name('home');
 
+
+
+Route::get('/', [FrontendController::class, 'index'])->name('home');
 
 //Route Artikel
 Route::get('/artikel', [FrontendController::class, 'artikel'])->name('artikel');
@@ -30,7 +34,7 @@ Route::get('/terimaevent', [FrontendController::class, 'terimaevent'])->name('te
 Route::get('/dataevent', [FrontendController::class, 'dataevent'])->name('dataevent');
 
 
-//Route Terima Usaha 
+//Route Terima Usaha
 Route::get('/terimausaha', [FrontendController::class, 'terimausaha'])->name('terimausaha');
 
 
