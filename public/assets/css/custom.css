@@ -1,8 +1,38 @@
 :root {
     --bs-primary: #265880;
-  }
-  
-  .btn-primary {
+    --bs-btn-hover-bg: #0c3555;
+    --bs-btn-active-bg: #001c32;
+    --bs-font-family: poppins;
+}
+
+.btn-primary {
     background-color: var(--bs-primary);
     border-color: var(--bs-primary);
-  }
+}
+
+h1 {
+    font-family: var(
+        --bs-font-family
+    ); /* Menggunakan var() untuk mengambil nilai variabel */
+}
+
+.backgorundCircle{
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    width: 60%;
+    height: 90%;
+    background: linear-gradient(to right, var(--bs-primary), var(--bs-btn-active-bg));
+    z-index: -1;
+    top: -6%;
+    right: 0;
+}
+
+.card{
+    position: absolute;
+    width: 35%;
+    height: auto;
+    z-index: 2;
+    top: 65%;
+    right: 20%; 
+}

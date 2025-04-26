@@ -12,7 +12,7 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.home'); // Menampilkan file home.blade.php dari folder frontend
+        return view('admin.home'); // Menampilkan file home.blade.php dari folder frontend
     }
 
 
@@ -20,7 +20,7 @@ class FrontendController extends Controller
     public function artikel()
     {
         // Return view untuk artikel
-        return view('frontend.artikel');
+        return view('admin.artikel');
     }
 
 
@@ -28,32 +28,40 @@ class FrontendController extends Controller
    public function terimaevent  ()
     {
         // Return view untuk artikel
-        return view('frontend.terimaevent');
+        return view('admin.terimaevent');
     }
 
     // Artikel terima event
    public function dataevent()
    {
        // Return view untuk artikel
-       return view('frontend.dataevent');
+       return view('admin.dataevent');
    }
 
    public function terimaUsaha()
     {
 
-        return view('frontend.terimausaha');
+        return view('admin.terimausaha');
     }
 
     public function dataUsaha()
     {
 
-        return view('frontend.datausaha');
+        return view('admin.datausaha');
     }
+
+
+    public function datasektor()
+    {
+
+        return view('admin.datasektor');
+    }
+
 
     public function profil()
     {
 
-        return view('frontend.profil');
+        return view('admin.profil');
     }
 
 
