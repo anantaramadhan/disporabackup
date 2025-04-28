@@ -1,0 +1,9 @@
+// custom.scss
+
+// 1. Override warna dulu
+$primary: #ff5733;
+$secondary: #6c757d;
+$danger: #e74c3c;
+
+// 2. Import Bootstrap SCSS
+@import "bootstrap/bootstrap";

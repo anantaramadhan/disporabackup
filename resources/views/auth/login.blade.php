@@ -11,6 +11,7 @@
 
   @include('layouts.scripts')
   @include('layouts.head')
+  
 
 <body>
 

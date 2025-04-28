@@ -317,3 +317,26 @@
   }
 
 })();
+
+
+//set kondisi tombol artikel dan event
+document.addEventListener('DOMContentLoaded', function() {
+    const tombolSatu = document.getElementById('tombolSatu');
+    const tombolDua = document.getElementById('tombolDua');
+  
+    function handleButtonClick(clickedButton, otherButton) {
+      clickedButton.classList.remove('btn-outline-black'); // Pastikan tombol yang diklik tidak memiliki outline
+      clickedButton.classList.add('btn-primary');
+  
+      otherButton.classList.remove('btn-primary');
+      otherButton.classList.add('btn-outline-black');
+    }
+  
+    tombolSatu.addEventListener('click', function() {
+      handleButtonClick(tombolSatu, tombolDua);
+    });
+  
+    tombolDua.addEventListener('click', function() {
+      handleButtonClick(tombolDua, tombolSatu);
+    });
+  });
