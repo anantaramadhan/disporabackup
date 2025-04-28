@@ -55,7 +55,7 @@
                 </ul>
 
                 {{-- button masuk dan profil --}}
-                <div class="me-4">
+                <div class="me-2">
                     <button class="btn btn-primary rounded-5 px-4">Masuk</button>
                 </div>
 

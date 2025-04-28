@@ -1,7 +1,7 @@
 :root {
     --bs-primary: #265880;
-    --bs-btn-hover-bg: #0c3555;
-    --bs-btn-active-bg: #001c32;
+    --bs-hover: #0c3555;
+    --bs-active: #001c32;
     --bs-font-family: poppins;
 }
 
@@ -10,29 +10,101 @@
     border-color: var(--bs-primary);
 }
 
+.btn-primary:hover {
+    background-color: var(--bs-hover);
+}
+
+.btn-primary:active {
+    background-color: var(--bs-active);
+}
+
 h1 {
     font-family: var(
         --bs-font-family
     ); /* Menggunakan var() untuk mengambil nilai variabel */
 }
 
-.backgorundCircle{
+.backgorundCircle {
     position: absolute;
     border-radius: 50%;
     display: flex;
     width: 60%;
     height: 90%;
-    background: linear-gradient(to right, var(--bs-primary), var(--bs-btn-active-bg));
+    background: linear-gradient(
+        to right,
+        var(--bs-primary) 30%,
+        var(--bs-hover) 70%
+    );
     z-index: -1;
-    top: -6%;
+    top: -2%;
     right: 0;
 }
 
-.card{
+.scroll-section div .card {
     position: absolute;
     width: 35%;
     height: auto;
     z-index: 2;
-    top: 65%;
-    right: 20%; 
+    top: 40%;
+    left: 62%;
+}
+
+.font {
+    font-family: sans-serif;
+}
+
+.bg-gradients {
+    background: linear-gradient(to right, var(--bs-primary), var(--bs-hover));
+}
+
+.nameNCH {
+    position: absolute;
+    z-index: 2;
+    top: 85%;
+    left: 2%;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-radius: 1000px;
+    background-color: var(--bs-active);
+}
+
+.content {
+    width: 21rem;
+    min-height: auto;
+}
+
+.svgSector {
+    width: 9.5rem;
+    min-height: 9.5rem;
+}
+
+.contentSector {
+    width: auto;
+}
+
+.sector {
+    overflow-x: scroll;
+    width: fit-content;
+}
+
+
+/* Styling untuk Firefox */
+.overflows {
+    overflow-x: auto;
+    display: flex;
+    scrollbar-width: none;
+    scrollbar-color: var(--bs-primary) #eee;
+}
+
+/* Untuk Chrome, Edge, dan Safari */
+.overflows::-webkit-scrollbar-button {
+    display: none;
+}
+
+.imageInformasi{
+    width: auto;
+    height: 26.563rem;
+    object-fit: cover;
 }

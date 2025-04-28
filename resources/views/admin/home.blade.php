@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('admin.layouts.head')
+@include('components.head')
 @include('admin.layouts.scripts')
 
 <body>
