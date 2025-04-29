@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 @include('pengusaha.layouts.head')
 @include('pengusaha.layouts.scripts')
@@ -9,7 +9,7 @@
   @include('pengusaha.layouts.header')
   @include('pengusaha.layouts.sidebar')
 
-  <main id="main" class="main" style="margin-top: 35px;">
+  <main id="main" class="main" style="margin-bottom: 35px;">
     <div class="pagetitle">
       <h1>Eventmu</h1>
     </div>
@@ -23,7 +23,7 @@
               <div class="d-flex justify-content-between mb-3">
                 <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Event..." onkeyup="searchTable()">
                 
-                <!-- Button Filter dan Button Tambah -->
+                <!-- Button Filter dan Button Ajukan -->
                 <div class="d-flex">
                   <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-funnel"></i> Filter
@@ -33,10 +33,10 @@
                     <a class="dropdown-item" href="#">Filter 2</a>
                   </div>
 
-                  <!-- Button Tambah dengan Warna Hijau -->
-                  <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#tambahEventModal">
-                    <i class="bi bi-plus-circle"></i> Tambah Event
-                  </button>
+                  <!-- Button Ajukan Event dengan Warna Hijau yang Mengarah ke Halaman Tambah Event -->
+                  <a href="{{ route('eventmu.tambah') }}" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus-circle"></i> Ajukan Event
+                  </a>
                 </div>
               </div>
 
@@ -132,38 +132,6 @@
       </div>
     </section>
   </main>
-
-  <!-- Modal Tambah Event -->
-  <div class="modal fade" id="tambahEventModal" tabindex="-1" aria-labelledby="tambahEventModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="tambahEventModalLabel">Tambah Event Baru</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="namaEvent" class="form-label">Nama Event</label>
-              <input type="text" class="form-control" id="namaEvent" placeholder="Masukkan nama event">
-            </div>
-            <div class="mb-3">
-              <label for="tanggalEvent" class="form-label">Tanggal Event</label>
-              <input type="date" class="form-control" id="tanggalEvent">
-            </div>
-            <div class="mb-3">
-              <label for="namaPengaju" class="form-label">Nama Pengaju</label>
-              <input type="text" class="form-control" id="namaPengaju" placeholder="Masukkan nama pengaju">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-          <button type="button" class="btn btn-primary">Simpan</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- JavaScript untuk Pencarian -->
   <script>

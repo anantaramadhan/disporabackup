@@ -15,7 +15,7 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route dashboard
-Route::get('/', [FrontendController::class, 'index'])->name('home');
+Route::get('home', [FrontendController::class, 'index'])->name('home');
 
 // Route Artikel
 Route::get('/artikel', [FrontendController::class, 'artikel'])->name('artikel');
@@ -52,18 +52,42 @@ Route::get('/profil', [FrontendController::class, 'profil'])->name('profil');
 use App\Http\Controllers\Pengusaha\InformasiUsahaController;
 use App\Http\Controllers\Pengusaha\EventmuController;
 use App\Http\Controllers\Pengusaha\ProdukUsahaController;
+use App\Http\Controllers\Pengusaha\ProfilController;
+use App\Http\Controllers\Pengusaha\BerandaController;
+use App\Http\Controllers\Pengusaha\AuthController;
+
+
+
+
+//ROUTE AUTH
+Route::get('/pengusaha/masuk', [AuthController::class, 'showmasuk'])->name('masuk');
+Route::get('/pengusaha/daftar', [AuthController::class, 'showdaftar'])->name('daftar');
+
+// ROUTE BERANDA
+Route::get('/pengusaha/beranda', [BerandaController::class, 'index'])->name('beranda');
+
+
+// ROUTE EVENTMU
+Route::get('/pengusaha/eventmu', [EventmuController::class, 'index'])->name('eventmu');
+Route::get('/pengusaha/eventmu/edit', [EventmuController::class, 'edit'])->name('eventmu.edit');
+Route::get('/pengusaha/eventmu/tambah', [EventmuController::class, 'tambah'])->name('eventmu.tambah');
+
 
 // ROUTE INFORMASI USAHA
 Route::get('/pengusaha/informasiusaha', [InformasiUsahaController::class, 'index'])->name('informasiusaha');
 Route::get('/pengusaha/informasiusaha/edit', [InformasiUsahaController::class, 'edit'])->name('pengusaha.edit');
 
-// ROUTE EVENTMU
-Route::get('/pengusaha/eventmu', [EventmuController::class, 'index'])->name('eventmu');
-Route::get('/pengusaha/eventmu/edit', [EventmuController::class, 'edit'])->name('eventmu.edit');
 
 // ROUTE PRODUK USAHA
 Route::get('/pengusaha/produkusaha', [ProdukUsahaController::class, 'index'])->name('produkusaha');
 Route::get('/pengusaha/produkusaha/edit', [ProdukUsahaController::class, 'edit'])->name('produk.edit');
+Route::get('/pengusaha/produkusaha/tambah', [ProdukUsahaController::class, 'tambah'])->name('produk.tambah');
+
+
+
+//ROUTE PROFIL
+Route::get('/pengusaha/profil', [ProfilController::class, 'index'])->name('profil');
+
 
 
 

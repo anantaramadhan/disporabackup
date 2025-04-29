@@ -17,6 +17,13 @@ class ProdukUsahaController extends Controller
         return view('pengusaha.produkusaha'); // You can return the view from the pengusaha folder
     }
 
+
+    public function tambah()
+    {
+        return view('pengusaha.produk.tambah'); // You can return the view from the pengusaha folder
+    }
+
+
     public function edit()
     {
         // Kembalikan tampilan untuk form info usaha

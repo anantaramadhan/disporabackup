@@ -9,9 +9,17 @@
   @include('pengusaha.layouts.header')
   @include('pengusaha.layouts.sidebar')
 
-  <main id="main" class="main">
+  <main id="main" class="main" style="margin-buttom: 35px;">
     <div class="pagetitle">
       <h1>Produk</h1>
+      <style>
+    /* CSS untuk menggeser tombol "Tampilkan Selengkapnya" ke kiri */
+    .card-body .btn-link {
+      margin-left: -12px;  /* Geser tombol sedikit ke kiri */
+      margin-top: -30px;
+    }
+  </style>
+
     </div>
 
     <section class="section">
@@ -23,14 +31,14 @@
               <div class="d-flex justify-content-between mb-3">
                 <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Produk..." onkeyup="searchTable()">
                 
-                <!-- Button Tambah Produk -->
-                <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#tambahProdukModal">
-                  <i class="bi bi-plus-circle"></i> Tambah Produk
-                </button>
+                <!-- Tombol Tambah Produk -->
+                <a href="{{ route('produk.tambah') }}" class="btn btn-sm btn-success">
+    <i class="bi bi-plus-circle"></i> Tambah Produk
+  </a>
               </div>
 
               <!-- Grid Produk -->
-              <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="row row-cols-1 row-cols-md-4 g-4">
                 <div class="col">
                   <div class="card h-100">
                     <img src="{{ asset('assets/img/logoekraf.png') }}" class="card-img-top" alt="Produk 1">
@@ -88,6 +96,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="{{ asset('assets/img/logoekraf.png') }}" class="card-img-top" alt="Produk 3">
+                    <div class="card-body">
+                      <h5 class="card-title">Produk D</h5>
+                      <p class="card-text" id="deskripsiProduk3">Deskripsi singkat tentang Produk C. Produk ini adalah pilihan terbaik untuk aktivitas luar ruangan.</p>
+                      <p id="deskripsiFull3" class="card-text d-none">Deskripsi lengkap tentang Produk C. Produk ini adalah pilihan terbaik untuk aktivitas luar ruangan, seperti hiking, berkemah, atau aktivitas petualangan lainnya. Dilengkapi dengan teknologi terbaru untuk kenyamanan maksimal dan keamanan dalam setiap perjalanan Anda.</p>
+                      <button class="btn btn-link" id="btnShowMore3" onclick="toggleDescription(4)">Tampilkan Selengkapnya</button>
+                    </div>
+                    <div class="card-footer text-muted">
+                      <span class="price">Rp 200.000</span>
+                      <!-- Tombol Edit dan Hapus -->
+                      <div class="d-flex justify-content-end mt-2">
+                        <a href="{{ route('produk.edit', 4) }}" class="btn btn-sm btn-warning me-2">Edit</a>
+                        <button class="btn btn-sm btn-danger">Hapus</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -96,40 +123,11 @@
     </section>
   </main>
 
-  <!-- Modal Tambah Produk -->
-  <div class="modal fade" id="tambahProdukModal" tabindex="-1" aria-labelledby="tambahProdukModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="tambahProdukModalLabel">Tambah Produk Baru</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="namaProduk" class="form-label">Nama Produk</label>
-              <input type="text" class="form-control" id="namaProduk" placeholder="Masukkan nama produk">
-            </div>
-            <div class="mb-3">
-              <label for="hargaProduk" class="form-label">Harga Produk</label>
-              <input type="number" class="form-control" id="hargaProduk" placeholder="Masukkan harga produk">
-            </div>
-            <div class="mb-3">
-              <label for="deskripsiProduk" class="form-label">Deskripsi Produk</label>
-              <textarea class="form-control" id="deskripsiProduk" rows="3" placeholder="Masukkan deskripsi produk"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-          <button type="button" class="btn btn-primary">Simpan</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <!-- JavaScript untuk Pencarian dan Toggle Deskripsi -->
   <script>
+    // Fungsi untuk mencari produk berdasarkan input
     function searchTable() {
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("searchInput");
@@ -141,7 +139,7 @@
         td = tr[i].getElementsByTagName("td");
         var matchFound = false;
 
-        // Loop through each cell in the row
+        // Loop melalui setiap sel di baris
         for (var j = 0; j < td.length; j++) {
           if (td[j]) {
             txtValue = td[j].textContent || td[j].innerText;
@@ -152,7 +150,7 @@
           }
         }
 
-        // Show the row if any match is found, else hide it
+        // Menampilkan baris jika ada kecocokan, jika tidak sembunyikan
         if (matchFound) {
           tr[i].style.display = "";
         } else {
@@ -161,21 +159,24 @@
       }
     }
 
-    // Function to toggle description visibility
+    // Fungsi untuk menampilkan atau menyembunyikan deskripsi produk
     function toggleDescription(productId) {
       var fullDesc = document.getElementById("deskripsiFull" + productId);
       var shortDesc = document.getElementById("deskripsiProduk" + productId);
       var btn = document.getElementById("btnShowMore" + productId);
 
+      // Mengecek apakah deskripsi lengkap sedang disembunyikan atau ditampilkan
       if (fullDesc.classList.contains("d-none")) {
         fullDesc.classList.remove("d-none");
-        btn.textContent = "Tampilkan Sedikit";
+        btn.textContent = "Tampilkan Sedikit"; // Ganti teks tombol
       } else {
         fullDesc.classList.add("d-none");
-        btn.textContent = "Tampilkan Selengkapnya";
+        btn.textContent = "Tampilkan Selengkapnya"; // Ganti teks tombol
       }
     }
+    
   </script>
+  
 
 </body>
 
