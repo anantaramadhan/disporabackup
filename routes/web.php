@@ -10,6 +10,11 @@ use App\Http\Controllers\Admin\UsahaController;
 use App\Http\Controllers\Admin\SektorController;
 use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\LandingPage\AboutController;
+use App\Http\Controllers\LandingPage\ArticelController;
+use App\Http\Controllers\LandingPage\HomeEventController;
+use App\Http\Controllers\LandingPage\GraphController;
+use App\Http\Controllers\LandingPage\SectorController;
 
 
 
@@ -77,4 +82,15 @@ Route::get('/profil', [FrontendController::class, 'profil'])->name('profil');
 
 
 // Route landing Page
-Route::get('/landingPage', [HomeController::class, 'index'])->name('index');
+//route home landing oage
+Route::get('/landingPage', [HomeController::class, 'index'])->name(name: 'home');
+//Route about landing page
+Route::get('/landingPage/tentang', [AboutController::class, 'index'])->name('about');
+//Route sector landing page
+Route::get('/landingPage/sektor', [SectorController::class, 'index'])->name('sector');
+//Route articel landing page
+Route::get('/landingPage/artikel', [ArticelController::class, 'index'])->name('articel');
+//Route event landing page
+Route::get('/landingPage/event', action: [HomeEventController::class, 'index'])->name('event');
+//Route infografis landing page
+Route::get('/landingPage/infografis', action: [GraphController::class, 'index'])->name('graph');

@@ -28,7 +28,7 @@
             <div class="card-body h-auto pt-3 w-100">
                 <p class="fs-5">Data Usaha Ekonomi Kreatif Kab. Nganjuk</p>
                 <h2 class="fw-bold fs-5">2000</h2>
-                <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                <a href="{{route('graph')}}" class="btn btn-primary">Lihat Selengkapnya</a>
             </div>
         </div>
 

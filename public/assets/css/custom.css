@@ -5,6 +5,10 @@
     --bs-font-family: poppins;
 }
 
+.text {
+    color: var(--bs-primary);
+}
+
 .btn-primary {
     background-color: var(--bs-primary);
     border-color: var(--bs-primary);
@@ -37,7 +41,23 @@ h1 {
     );
     z-index: -1;
     top: -2%;
-    right: 0;
+    right: 0%;
+}
+
+.backgorundCircle2 {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        var(--bs-primary) 30%,
+        var(--bs-hover) 70%
+    );
+    z-index: -1;
+    top: 2;
+    left: 2%;
 }
 
 .scroll-section div .card {
@@ -54,7 +74,16 @@ h1 {
 }
 
 .bg-gradients {
-    background: linear-gradient(to right, var(--bs-primary), var(--bs-hover));
+    background: linear-gradient(
+            to right,
+            var(--bs-primary) 30%,
+            var(--bs-hover)
+        )
+        70%;
+}
+
+.bg{
+    background-color: var(--bs-active);
 }
 
 .nameNCH {
@@ -89,7 +118,6 @@ h1 {
     width: fit-content;
 }
 
-
 /* Styling untuk Firefox */
 .overflows {
     overflow-x: auto;
@@ -103,7 +131,7 @@ h1 {
     display: none;
 }
 
-.imageInformasi{
+.imageInformasi {
     width: auto;
     height: 26.563rem;
     object-fit: cover;

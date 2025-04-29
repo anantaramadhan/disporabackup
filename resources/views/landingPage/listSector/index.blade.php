@@ -9,21 +9,17 @@
     }
 </style>
 
-
 <body>
 
     @include('landingPage.layouts.header')
 
-    @include('landingPage.about.components.ekraf')
+    <div>
 
-    @include('landingPage.about.components.vidioprofile')
+        <h1>Iki Sektor</h1>
 
-    @include('landingPage.about.components.aboutekraf')
-
-    @include('landingPage.about.components.subsector')
+    </div>
 
     @include('landingPage.layouts.footer')
-
 </body>
 
 </html>
