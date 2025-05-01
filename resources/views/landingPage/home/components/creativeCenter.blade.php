@@ -2,10 +2,8 @@
     <h1 class="mb-5">Creative Center</h1>
 
     <div class="container-fluid">
-        {{-- container scroll --}}
-        <div class="overflows d-flex flex-column py-4 px-lg-5 gap-4 me-4 element-container">
 
-            <?php
+        <?php
 
             //data card atas
             $data = [
@@ -115,8 +113,11 @@
             }
             ?>
 
+        {{-- container scroll --}}
+        <div class="d-flex flex-column w-100 py-4 gap-4 element-container">
+
             {{-- card atas --}}
-            <div class="gap-4 d-flex flex-row element ">
+            <div class="overflows pb-4 gap-4 d-flex flex-row element px-4 ">
 
                 <?php foreach ($data as $item): ?>
                 <div class="py-4 px-4 rounded-4 shadow w-auto contentSector zoom-card">
@@ -138,7 +139,7 @@
             </div>
 
             {{-- card bawah --}}
-            <div class="gap-4 d-flex flex-row mb-5 element ">
+            <div class="overflows pb-4 gap-4 d-flex flex-row element px-4 ">
 
                 <?php foreach ($data2 as $item2): ?>
                 <div class="py-4 px-4 rounded-4 shadow w-auto contentSector zoom-card">
@@ -158,13 +159,8 @@
                 <?php endforeach; ?>
 
             </div>
-
-
-
-
-
-
         </div>
+
     </div>
 
     <div class="progress w-25" style="height: 8px" role="progressbar"

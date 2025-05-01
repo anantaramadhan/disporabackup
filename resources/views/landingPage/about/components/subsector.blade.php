@@ -1,6 +1,6 @@
 {{-- subsektor --}}
-<section class="container-xxl d-flex flex-row gap-4 py-lg-5 my-5 align-items-center">
-    <div class="w-50">
+<section class="container-xxl d-flex flex-lg-row flex-column gap-4 py-lg-5 my-5 align-items-center">
+    <div class="w-100 d-flex justify-content-center">
         <svg class="w-75 h-auto text-gray-800 dark:text-white" aria-hidden="true" width="806"
             height="593" viewBox="0 0 806 593" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -402,7 +402,7 @@
         </svg>
     </div>
 
-    <div class="d-flex flex-column w-50">
+    <div class="d-flex flex-column w-100">
         <h1 class="text mmb-5">SubSektor</h1>
         <p class="text-black">Subsektor adalah bagian dari sektor yang lebih besar, yang merupakan pembagian kegiatan ekonomi suatu
             negara. Subsektor dapat mencakup berbagai bidang, seperti ekonomi kreatif, pertanian, dan
