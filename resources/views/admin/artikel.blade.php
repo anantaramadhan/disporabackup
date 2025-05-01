@@ -9,7 +9,6 @@
   @include('admin.layouts.header')
   @include('admin.layouts.sidebar')
 
-
   <main id="main" class="main">
 
     <!-- Header: Judul + Search -->
@@ -37,8 +36,8 @@
 
     </div>
 
-    <!-- Filter dan Tombol Tambah -->
-    <div class="d-flex justify-content-left mb-4 w-100">
+    <!-- Filter dan Tombol Tambah di sebelah kanan -->
+    <div class="d-flex justify-content-end mb-4 w-100">
       <div class="dropdown me-2">
         <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-funnel"></i> Filter

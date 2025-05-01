@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\SektorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LupaSandiController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\UsahaController;
 use App\Http\Controllers\LandingPage\HomeController;
@@ -14,7 +15,15 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route dashboard
+
+//route lupa sandi 
+Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lupasandi');
+
+
+
+
+
+// Route Beranda
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 
 // Route Artikel
@@ -43,7 +52,7 @@ Route::get('/datasektor', [FrontendController::class, 'datasektor'])->name('data
 Route::get('/datasektor/sektor/info', [SektorController::class, 'info'])->name('sektor.info');
 
 // Route Profil
-Route::get('/profil', [FrontendController::class, 'profil'])->name('profil');
+Route::get('admin/profil', [FrontendController::class, 'profil'])->name('admin.profil');
 
 
 
