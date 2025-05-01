@@ -2,12 +2,12 @@
 <section class="container-xxl d-flex flex-column align-items-center py-4">
     <h1 class=" text-black py-5">Profil Ekonomi Kreatf</h1>
 
-    <div class="w-100 d-flex flex-row gap-4">
+    <div class="w-100 d-flex flex-lg-row flex-column gap-4">
 
         {{-- vidio pertama --}}
         <div class="d-flex flex-column align-items-center w-100">
 
-            <iframe width="560" height="315" class="rounded-4"
+            <iframe class="rounded-4 w-100" style="height: 315px"
                 src="https://www.youtube.com/embed/4JfOaoBdSgY?si=i4ddAAu96wPYzqMk" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -18,7 +18,7 @@
 
         {{-- vidio kedua --}}
         <div class="d-flex flex-column align-items-center w-100">
-            <iframe width="560" height="315" class="rounded-4"
+            <iframe  class="rounded-4 w-100" style="height: 315px"
                 src="https://www.youtube.com/embed/ks5cKNvk-Zo?si=rN7oVjNmxYSUwsDw" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

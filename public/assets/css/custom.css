@@ -82,7 +82,7 @@ h1 {
         70%;
 }
 
-.bg{
+.bg {
     background-color: var(--bs-active);
 }
 
@@ -111,17 +111,16 @@ h1 {
 
 .contentSector {
     width: auto;
+    flex-shrink: 0;
 }
 
 .sector {
-    overflow-x: scroll;
-    width: fit-content;
+    width: 100%;
 }
 
 /* Styling untuk Firefox */
 .overflows {
-    overflow-x: auto;
-    display: flex;
+    overflow-x: scroll;
     scrollbar-width: none;
     scrollbar-color: var(--bs-primary) #eee;
 }
@@ -135,4 +134,14 @@ h1 {
     width: auto;
     height: 26.563rem;
     object-fit: cover;
+}
+
+.inputsearch {
+    width: 100%;
+}
+
+.input-group .form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #ced4da !important; /* default border color Bootstrap */
 }

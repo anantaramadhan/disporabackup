@@ -1,11 +1,11 @@
 {{-- section penjelasan nganjuk.ekraf --}}
-<section class="container-xxl d-flex justify-content-center align-items-center py-4">
-    <div class="d-flex position-relative w-50 h-100">
+<section class="container-xxl d-flex flex-lg-row flex-column w-100 justify-content-center align-items-center py-4">
+    <div class="d-flex position-relative w-100 h-100">
         <img src="{{ asset('assets/img/logo 3d ekraf.png') }}" alt="" class="w-100 h-100">
         <div class="backgorundCircle2"></div>
     </div>
 
-    <div class="w-50">
+    <div class="w-100">
         <h1 class="fw-bold text-primary d-flex flex-column">Apa Sih <span class="text-black flex-row">Nganjuk <span
                     class="fw-normal">.Ekraf</span> </span> </h1>
         <p>Nganjuk Ekonomi Kreatif atau disingkat Nganjuk.Ekraf merupakan Platform Digital Ekonomi Kreatif Kabupaten
