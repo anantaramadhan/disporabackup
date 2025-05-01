@@ -3,10 +3,10 @@
 
     <div class="container-fluid">
         {{-- container scroll --}}
-        <div class="overflows d-flex flex-column py-4 px-lg-5 gap-4 element-container">
+        <div class="overflows d-flex flex-column py-4 px-lg-5 gap-4 me-4 element-container">
 
             <?php
-            
+
             //data card atas
             $data = [
                 [
@@ -39,7 +39,7 @@
                     'title' => 'Pengembangan Game',
                     'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
                 ],
-            
+
                 [
                     'gambar' => 'assets/svg/filmAnimasiDanVidio.svg',
                     'title' => 'Pengembangan Game',
@@ -56,7 +56,7 @@
                     'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
                 ],
             ];
-            
+
             // data card bawah
             $data2 = [
                 [
@@ -89,7 +89,7 @@
                     'title' => 'Pengembangan Game',
                     'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
                 ],
-            
+
                 [
                     'gambar' => 'assets/svg/seniRupa.svg',
                     'title' => 'Pengembangan Game',
@@ -101,7 +101,7 @@
                     'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
                 ],
             ];
-            
+
             // fungsi sort kata
             function potong_kata($teks, $jumlahKata = 20)
             {

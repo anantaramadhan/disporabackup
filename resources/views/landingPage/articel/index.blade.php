@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 @include('components.head')
 
 <style>
@@ -14,16 +15,12 @@
 
     @include('landingPage.layouts.header')
 
-    @include('landingPage.about.components.ekraf')
-
-    @include('landingPage.about.components.vidioprofile')
-
-    @include('landingPage.about.components.aboutekraf')
-
-    @include('landingPage.about.components.subsector')
+    {{-- section penjelasan nganjuk.ekraf --}}
+    <section>
+        <h1>iki artikel</h1>
+    </section>
 
     @include('landingPage.layouts.footer')
-
 </body>
 
 </html>
