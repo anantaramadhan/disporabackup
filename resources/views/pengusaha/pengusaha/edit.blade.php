@@ -59,14 +59,6 @@
                   </div>
                 </div>
 
-                <!-- Sosial Media -->
-                <div class="row mb-3">
-                  <div class="col-lg-4 fw-bold">Sosial Media</div>
-                  <div class="col-lg-8">
-                    <input type="text" name="sosial_media" class="form-control" value="Instagram: @huscreative" required>
-                  </div>
-                </div>
-
                 <!-- Sektor -->
                 <div class="row mb-3">
                   <div class="col-lg-4 fw-bold">Sektor</div>
@@ -88,12 +80,6 @@
                 <div class="row g-2">
                   <div class="col-4">
                     <input type="file" name="foto_usaha_1" class="form-control">
-                  </div>
-                  <div class="col-4">
-                    <input type="file" name="foto_usaha_2" class="form-control">
-                  </div>
-                  <div class="col-4">
-                    <input type="file" name="foto_usaha_3" class="form-control">
                   </div>
                 </div>
 

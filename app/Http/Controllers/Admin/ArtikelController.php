@@ -18,5 +18,5 @@ class ArtikelController extends Controller
         return view('admin.artikel.edit');  // Mengarah ke view tambah.blade.php
     }
 
-   
+    
 }

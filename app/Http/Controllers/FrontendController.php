@@ -12,7 +12,7 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('admin.home'); // Menampilkan file home.blade.php dari folder frontend
+        return view('admin.beranda'); // Menampilkan file home.blade.php dari folder frontend
     }
 
 

@@ -41,7 +41,7 @@
               <tbody>
                 <tr>
                   <td>1</td> <!-- Nomor -->
-                  <td><img src="{{ asset('assets/img/sektor1.jpg') }}" alt="Sektor 1" class="img-fluid" width="60"></td>
+                  <td><img src="{{ asset('assets/img/logoekraf.png') }}" alt="Sektor 1" class="img-fluid" width="60"></td>
                   <td>Sektor 1</td>
                   <td>Deskripsi sektor 1</td>
                   <td>150</td> <!-- Jumlah Pelaku Usaha -->

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\SektorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LupaSandiController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\UsahaController;
@@ -21,6 +22,10 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
+//Route daftar
+Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
+
+
 //route lupa sandi 
 Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lupasandi');
 
@@ -29,7 +34,7 @@ Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lu
 
 
 // Route Beranda
-Route::get('home', [FrontendController::class, 'index'])->name('home');
+Route::get('admin/beranda', [FrontendController::class, 'index'])->name('admin.beranda');
 
 // Route Artikel
 Route::get('/artikel', [FrontendController::class, 'artikel'])->name('artikel');
@@ -98,16 +103,14 @@ Route::get('/pengusaha/produkusaha/edit', [ProdukUsahaController::class, 'edit']
 Route::get('/pengusaha/produkusaha/tambah', [ProdukUsahaController::class, 'tambah'])->name('produk.tambah');
 
 
-
 //ROUTE PROFIL
 Route::get('/pengusaha/profil', [ProfilController::class, 'index'])->name('profil');
 
 
 
 
-// Route landing Page
 //route home landing oage
-Route::get('/landingPage', [HomeController::class, 'index'])->name(name: 'home');
+Route::get('/', [HomeController::class, 'index'])->name(name: 'home');
 //Route about landing page
 Route::get('/landingPage/tentang', [AboutController::class, 'index'])->name('about');
 //Route sector landing page
