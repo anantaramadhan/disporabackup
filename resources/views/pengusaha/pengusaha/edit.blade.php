@@ -92,13 +92,9 @@
                   </div>
                 </div>
 
-                <!-- Tombol Simpan dan Batal -->
-                <div class="row mt-4">
-                  <div class="col text-end">
-                    <button type="button" class="btn btn-danger me-2">Batal</button>
-                    <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary w-100">Simpan Perubahan</button>
                   </div>
-                </div>
 
               </form>
 
