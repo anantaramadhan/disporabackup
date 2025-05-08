@@ -27,15 +27,28 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body pt-4">
-              <!-- Kolom Pencarian Produk -->
-              <div class="d-flex justify-content-between mb-3">
+
+               <!-- Kolom Pencarian Terpisah -->
+               <div class="d-flex justify-content-between mb-3">
                 <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Produk..." onkeyup="searchTable()">
                 
-                <!-- Tombol Tambah Produk -->
-                <a href="{{ route('produk.tambah') }}" class="btn btn-sm btn-success">
-    <i class="bi bi-plus-circle"></i> Tambah Produk
-  </a>
+                <!-- Button Filter dan Button Ajukan -->
+                <div class="d-flex">
+                  <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-funnel"></i> Filter
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Filter 1</a>
+                    <a class="dropdown-item" href="#">Filter 2</a>
+                  </div>
+
+                  <!-- Button Ajukan Event dengan Warna Hijau yang Mengarah ke Halaman Tambah Event -->
+                  <a href="{{ route('produk.tambah') }}" class="btn btn-sm btn-success d-flex align-items-center justify-content-center">
+                    <i class="bi bi-plus-circle me-2"></i> Tambah Produk
+                  </a>
+                </div>
               </div>
+
 
               <!-- Grid Produk -->
               <div class="row row-cols-1 row-cols-md-4 g-4">

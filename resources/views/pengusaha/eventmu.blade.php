@@ -19,6 +19,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body pt-4">
+
               <!-- Kolom Pencarian Terpisah -->
               <div class="d-flex justify-content-between mb-3">
                 <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Event..." onkeyup="searchTable()">
@@ -34,8 +35,8 @@
                   </div>
 
                   <!-- Button Ajukan Event dengan Warna Hijau yang Mengarah ke Halaman Tambah Event -->
-                  <a href="{{ route('eventmu.tambah') }}" class="btn btn-sm btn-success">
-                    <i class="bi bi-plus-circle"></i> Ajukan Event
+                  <a href="{{ route('eventmu.tambah') }}" class="btn btn-sm btn-success d-flex align-items-center justify-content-center">
+                    <i class="bi bi-plus-circle me-2"></i> Ajukan Event
                   </a>
                 </div>
               </div>
@@ -44,16 +45,17 @@
               <table class="table table-hover" id="eventTable">
                 <thead>
                   <tr>
-                    <th>No</th> <!-- Kolom Nomor -->
-                    <th>Event</th> <!-- Gabungkan Foto dan Deskripsi -->
+                    <th>No</th>
+                    <th>Event</th>
                     <th>Tanggal Event</th>
-                    <th>Status Event</th> <!-- Kolom Status Event -->
+                    <th>Status Event</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <!-- Row 1 -->
                   <tr>
-                    <td>1</td> <!-- Nomor -->
+                    <td>1</td>
                     <td>
                       <div class="d-flex align-items-center">
                         <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 1" class="img-fluid" width="60" class="me-2">
@@ -62,16 +64,18 @@
                           <p class="mb-0">Event seni tahunan yang akan diadakan pada bulan Juni 2025.</p>
                         </div>
                       </div>
-                    </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
+                    </td>
                     <td>10 Juni 2025</td>
-                    <td><span class="badge bg-success">Aktif</span></td> <!-- Status Event -->
+                    <td><span class="badge bg-success">Aktif</span></td>
                     <td>
                       <a href="{{ route('eventmu.edit', 1) }}" class="btn btn-sm btn-warning">Edit</a>
                       <button class="btn btn-sm btn-danger">Hapus Event</button>
                     </td>
                   </tr>
+
+                  <!-- Row 2 -->
                   <tr>
-                    <td>2</td> <!-- Nomor -->
+                    <td>2</td>
                     <td>
                       <div class="d-flex align-items-center">
                         <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 2" class="img-fluid" width="60" class="me-2">
@@ -80,16 +84,18 @@
                           <p class="mb-0">Konser musik dengan berbagai artis ternama di Juli 2025.</p>
                         </div>
                       </div>
-                    </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
+                    </td>
                     <td>15 Juli 2025</td>
-                    <td><span class="badge bg-warning">Menunggu</span></td> <!-- Status Event -->
+                    <td><span class="badge bg-warning">Menunggu</span></td>
                     <td>
                       <a href="{{ route('eventmu.edit', 2) }}" class="btn btn-sm btn-warning">Edit</a>
                       <button class="btn btn-sm btn-danger">Hapus Event</button>
                     </td>
                   </tr>
+
+                  <!-- Row 3 -->
                   <tr>
-                    <td>3</td> <!-- Nomor -->
+                    <td>3</td>
                     <td>
                       <div class="d-flex align-items-center">
                         <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 3" class="img-fluid" width="60" class="me-2">
@@ -98,16 +104,18 @@
                           <p class="mb-0">Seminar mengenai teknologi terbaru pada bulan Agustus 2025.</p>
                         </div>
                       </div>
-                    </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
+                    </td>
                     <td>22 Agustus 2025</td>
-                    <td><span class="badge bg-danger">Batal</span></td> <!-- Status Event -->
+                    <td><span class="badge bg-danger">Batal</span></td>
                     <td>
                       <a href="{{ route('eventmu.edit', 3) }}" class="btn btn-sm btn-warning">Edit</a>
                       <button class="btn btn-sm btn-danger">Hapus Event</button>
                     </td>
                   </tr>
+
+                  <!-- Row 4 -->
                   <tr>
-                    <td>4</td> <!-- Nomor -->
+                    <td>4</td>
                     <td>
                       <div class="d-flex align-items-center">
                         <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 4" class="img-fluid" width="60" class="me-2">
@@ -116,9 +124,9 @@
                           <p class="mb-0">Pameran pendidikan terbesar dengan berbagai institusi terkemuka di September 2025.</p>
                         </div>
                       </div>
-                    </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
+                    </td>
                     <td>5 September 2025</td>
-                    <td><span class="badge bg-success">Aktif</span></td> <!-- Status Event -->
+                    <td><span class="badge bg-success">Aktif</span></td>
                     <td>
                       <a href="{{ route('eventmu.edit', 4) }}" class="btn btn-sm btn-warning">Edit</a>
                       <button class="btn btn-sm btn-danger">Hapus Event</button>

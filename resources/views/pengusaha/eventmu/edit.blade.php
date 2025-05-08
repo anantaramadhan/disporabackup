@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 @include('pengusaha.layouts.head')
 @include('pengusaha.layouts.scripts')
@@ -9,68 +9,126 @@
   @include('pengusaha.layouts.header')
   @include('pengusaha.layouts.sidebar')
 
-  <main id="main" class="main">
+  <main id="main" class="main" style="margin-bottom: 35px;">
     <div class="pagetitle">
       <h1>Edit Event</h1>
-    </div>
+    </div><!-- End Page Title -->
 
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
           <div class="card">
-            <div class="card-body pt-4">
-              <!-- Form Edit Event -->
-              <form>
-                
-                <!-- Nama Event -->
-                <div class="mb-3">
-                  <label for="namaEvent" class="form-label">Nama Event</label>
-                  <input type="text" class="form-control" id="namaEvent" value="Festival Seni 2025" required>
-                </div>
+            <div class="card-body">
+              <h5 class="card-title">Form Edit Event</h5>
 
-                <!-- Tanggal Event -->
-                <div class="mb-3">
-                  <label for="tanggalEvent" class="form-label">Tanggal Event</label>
-                  <input type="date" class="form-control" id="tanggalEvent" value="2025-06-10" required>
-                </div>
+              <!-- Form untuk edit event -->
+              <form action="#" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT') <!-- Menggunakan method PUT untuk update -->
 
-                <!-- Nama Pengaju -->
-                <div class="mb-3">
-                  <label for="namaPengaju" class="form-label">Nama Pengaju</label>
-                  <input type="text" class="form-control" id="namaPengaju" value="Hermawan" required>
-                </div>
+                <div class="row">
+                  <!-- Nama Event -->
+                  <div class="col-12">
+                    <label for="namaEvent" class="form-label">Nama Event</label>
+                    <input type="text" name="nama_event" class="form-control" id="namaEvent" placeholder="Masukkan nama event" value="Festival Seni 2025" required>
+                  </div>
 
-                <!-- Status Event -->
-                <div class="mb-3">
-                  <label for="statusEvent" class="form-label">Status Event</label>
-                  <select class="form-control" id="statusEvent">
-                    <option value="Aktif" selected>Aktif</option>
-                    <option value="Menunggu">Menunggu</option>
-                    <option value="Batal">Batal</option>
-                  </select>
-                </div>
+                  <!-- Tanggal Event -->
+                  <div class="col-12 mt-3">
+                    <label for="tanggalEvent" class="form-label">Tanggal Event</label>
+                    <input type="date" name="tanggal_event" class="form-control" id="tanggalEvent" value="2025-06-10" required>
+                  </div>
 
-                <!-- Foto Event -->
-                <div class="mb-3">
-                  <label for="fotoEvent" class="form-label">Foto Event</label>
-                  <input type="file" class="form-control" id="fotoEvent">
-                  <small class="text-muted">* Kosongkan jika tidak ingin mengubah foto</small>
-                </div>
+                  <!-- Lokasi Event -->
+                  <div class="col-12 mt-3">
+                    <label for="lokasiEvent" class="form-label">Lokasi Event</label>
+                    <input type="text" name="lokasi_event" class="form-control" id="lokasiEvent" placeholder="Masukkan lokasi event" value="Jakarta, Indonesia" required readonly>
+                  </div>
 
-                <!-- Tombol Simpan -->
-                <div class="mb-3">
-                  <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                  <a href="{{ route('eventmu') }}" class="btn btn-secondary">Kembali</a>
-                </div>
+                  <!-- Peta Lokasi Event -->
+                  <div class="col-12 mt-3">
+                    <label for="map" class="form-label">Pilih Lokasi di Peta</label>
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+                    <input type="hidden" name="latitude" id="latitude" value="-6.2088">
+                    <input type="hidden" name="longitude" id="longitude" value="106.8456">
+                  </div>
 
+                  <!-- Deskripsi Event -->
+                  <div class="col-12 mt-3">
+                    <label for="deskripsiEvent" class="form-label">Deskripsi Event</label>
+                    <textarea name="deskripsi_event" class="form-control" id="deskripsiEvent" rows="4" placeholder="Masukkan deskripsi event" required>Event seni tahunan yang akan diadakan pada bulan Juni 2025.</textarea>
+                  </div>
+
+                  <!-- Foto Event -->
+                  <div class="col-12 mt-3">
+                    <label for="fotoEvent" class="form-label">Foto Event</label>
+                    <input type="file" name="foto_event" class="form-control" id="fotoEvent" accept="image/*">
+                    <img src="path_to_image.jpg" alt="Foto Event" width="100" class="mt-2">
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary w-100">Simpan Perubahan</button>
+                  </div>
+                </div>
               </form>
+
             </div>
           </div>
         </div>
       </div>
     </section>
-  </main>
 
+  </main><!-- End #main -->
+
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" async defer></script>
+
+  <script>
+    var map, marker;
+
+    function initMap() {
+      var initialLocation = { lat: parseFloat(document.getElementById('latitude').value) || -6.2088, lng: parseFloat(document.getElementById('longitude').value) || 106.8456 };
+
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: initialLocation,
+        zoom: 13,
+      });
+
+      marker = new google.maps.Marker({
+        position: initialLocation,
+        map: map,
+        draggable: true,
+      });
+
+      // Update latitude and longitude hidden inputs when the marker is dragged
+      google.maps.event.addListener(marker, "dragend", function () {
+        var position = marker.getPosition();
+        document.getElementById("latitude").value = position.lat();
+        document.getElementById("longitude").value = position.lng();
+        geocodePosition(position);
+      });
+
+      // Set the location name when map is clicked
+      google.maps.event.addListener(map, "click", function (event) {
+        var position = event.latLng;
+        marker.setPosition(position);
+        document.getElementById("latitude").value = position.lat();
+        document.getElementById("longitude").value = position.lng();
+        geocodePosition(position);
+      });
+    }
+
+    function geocodePosition(position) {
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ location: position }, function (results, status) {
+        if (status === "OK" && results[0]) {
+          document.getElementById("lokasiEvent").value = results[0].formatted_address;
+        } else {
+          alert("Geocode failed: " + status);
+        }
+      });
+    }
+  </script>
 
 </body>
 

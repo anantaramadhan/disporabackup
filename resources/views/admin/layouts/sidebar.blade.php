@@ -8,7 +8,7 @@
 
     <!-- Menu Beranda -->
     <li class="nav-item">
-      <a class="nav-link @if(request()->is('admin.beranda*')) active @else collapsed @endif" href="{{ route('admin.beranda') }}">
+      <a class="nav-link @if(request()->is('admin/beranda*')) active @else collapsed @endif" href="{{ route('admin.beranda') }}">
         <i class="bi bi-grid"></i>
         <span>Beranda</span>
       </a>
