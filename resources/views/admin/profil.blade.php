@@ -45,10 +45,6 @@
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profil</button>
                 </li>
 
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Ubah Kata Sandi</button>
-                </li>
-
               </ul>
               <div class="tab-content pt-2">
 
@@ -71,10 +67,6 @@
                     <div class="col-lg-9 col-md-8">disporangkgmail.com</div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Kata sandi</div>
-                    <div class="col-lg-9 col-md-8">*************</div>
-                  </div>
 
                 </div>
 
@@ -114,15 +106,6 @@
                       </div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="Password" class="col-md-4 col-lg-3 col-form-label">Kata sandi</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="input-group">
-                          <input name="password" type="password" class="form-control" id="password" value="passwordlama">
-                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('password')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
-                        </div>
-                      </div>
-                    </div>
 
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Simpan</button>
@@ -133,42 +116,7 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
-
-                    <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Kata Sandi Lama</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="input-group">
-                          <input name="currentpassword" type="password" class="form-control" id="currentPassword">
-                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('currentPassword')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Kata Sandi Baru</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="input-group">
-                          <input name="newpassword" type="password" class="form-control" id="newPassword">
-                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('newPassword')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Ulangi Kata Sandi</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="input-group">
-                          <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('renewPassword')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Ubah</button>
-                    </div>
-                  </form><!-- End Change Password Form -->
+                 
 
                 </div>
 
@@ -183,22 +131,6 @@
 
   </main><!-- End #main -->
 
-  <script>
-    function togglePasswordVisibility(id) {
-      const passwordField = document.getElementById(id);
-      const eyeIcon = document.getElementById("eye-icon");
-
-      if (passwordField.type === "password") {
-        passwordField.type = "text";
-        eyeIcon.classList.remove("bi-eye-slash");
-        eyeIcon.classList.add("bi-eye");
-      } else {
-        passwordField.type = "password";
-        eyeIcon.classList.remove("bi-eye");
-        eyeIcon.classList.add("bi-eye-slash");
-      }
-    }
-  </script>
 
 </body>
 </html>

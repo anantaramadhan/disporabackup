@@ -30,4 +30,6 @@ class EventmuController extends Controller
         // Kembalikan tampilan untuk form info usaha
         return view('pengusaha.eventmu.edit');
     }
+
+    
 }

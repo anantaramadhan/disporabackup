@@ -64,7 +64,7 @@
 
     <!-- Menu Profil -->
     <li class="nav-item">
-      <a class="nav-link @if(request()->is('admin.profil*')) active @else collapsed @endif" href="{{ route('admin.profil') }}">
+      <a class="nav-link @if(request()->is('admin/profil*')) active @else collapsed @endif" href="{{ route('admin.profil') }}">
         <i class="bi bi-person"></i>
         <span>Profil</span>
       </a>

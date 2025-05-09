@@ -118,10 +118,7 @@
             <label for="gambarSektor" class="form-label">Gambar Sektor</label>
             <input type="file" class="form-control" id="gambarSektor">
           </div>
-          <div class="mb-3">
-            <label for="pelakuUsaha" class="form-label">Jumlah Pelaku Usaha</label>
-            <input type="number" class="form-control" id="pelakuUsaha" placeholder="Masukkan jumlah pelaku usaha">
-          </div>
+          
         </form>
       </div>
       <div class="modal-footer">
