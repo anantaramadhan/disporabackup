@@ -60,7 +60,7 @@
       @for ($i = 1; $i <= 4; $i++)
       <div class="col-md-3 mb-4">
         <div class="card">
-          <img src="assets/img/logoekraf.png" class="card-img-top" alt="Gambar Artikel" style="max-height: 200px; object-fit: cover;">
+          <img src="{{ asset('assets/img/logoekraf.png') }}" class="card-img-top" alt="Gambar Artikel" style="max-height: 200px; object-fit: cover;">
           <div class="card-body">
             <h5 class="card-title" style="font-size: 1.1rem;">Judul Artikel {{ $i }}</h5>
             <p class="card-text" style="font-size: 0.9rem;">Keterangan artikel singkat {{ $i }}.</p>

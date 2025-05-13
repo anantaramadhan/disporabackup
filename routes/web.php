@@ -68,6 +68,8 @@ Route::get('admin/datasektor/info', [DataSektorController::class, 'info'])->name
 
 // Route Profil
 Route::get('admin/profil', [ProfilAdminController::class, 'index'])->name('admin.profil');
+Route::get('admin/error', [ProfilAdminController::class, 'error'])->name('error.404');
+
 
 
 

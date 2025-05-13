@@ -12,5 +12,11 @@ class ProfilAdminController extends Controller
         return view('admin.profil');
     }
 
+    public function error()
+    {
+        // Kembalikan tampilan untuk form info usaha
+        return view('error.404');
+    }
+
 
 }

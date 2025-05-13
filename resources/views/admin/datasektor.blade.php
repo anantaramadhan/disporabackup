@@ -17,14 +17,28 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body pt-4">
-            <!-- Kolom Pencarian Terpisah -->
-            <div class="d-flex justify-content-between mb-3">
-              <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Sektor..." onkeyup="searchTable()">
-              <!-- Button Tambah Sektor -->
-              <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#tambahSektorModal">
+
+          <!-- Kolom Pencarian Terpisah -->
+              <div class="d-flex justify-content-between mb-3">
+                <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Event..." onkeyup="searchTable()">
+                
+                <!-- Button Filter dan Button Ajukan -->
+                <div class="d-flex">
+                  <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-funnel"></i> Filter
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Filter 1</a>
+                    <a class="dropdown-item" href="#">Filter 2</a>
+                  </div>
+
+                 <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#tambahSektorModal">
                 <i class="bi bi-plus-circle"></i> Tambah Sektor
               </button>
-            </div>
+                </div>
+              </div>
+
+           
 
             <!-- Tabel Data Sektor -->
             <table class="table table-hover" id="sektorTable">
