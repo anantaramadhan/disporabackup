@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
 {
+    public function index()
+    {
+        // Kembalikan tampilan untuk form tambah artikel
+        return view('admin.artikel');
+    }
+
     // Menampilkan halaman tambah artikel
     public function tambah()
     {

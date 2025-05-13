@@ -2,11 +2,9 @@
 <html lang="en">
 
 @include('admin.layouts.head')
-
 @include('admin.layouts.scripts')
 
 <body>
-
   @include('admin.layouts.header')
   @include('admin.layouts.sidebar')
 
@@ -47,13 +45,8 @@
 
           <!-- Tombol Aksi -->
           <div class="d-flex justify-content-between">
-            <!-- Tombol Kembali -->
-            <a href="/artikel" class="btn btn-secondary">
-              <i class="bi bi-arrow-left"></i> Kembali
-            </a>
-
             <!-- Tombol Batal dan Simpan -->
-            <div>
+            <div class="ms-auto">
               <button type="reset" class="btn btn-danger me-2">
                 <i class="bi bi-x-circle"></i> Batal
               </button>
@@ -62,10 +55,12 @@
               </button>
             </div>
           </div>
+
         </form>
       </div>
     </div>
 
   </main>
+
 </body>
 </html>

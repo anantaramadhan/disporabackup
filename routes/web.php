@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DataSektorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\SektorController;
@@ -7,8 +8,12 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LupaSandiController;
-use App\Http\Controllers\Admin\EventController;
-use App\Http\Controllers\Admin\UsahaController;
+use App\Http\Controllers\Admin\BerandaAdminController;
+use App\Http\Controllers\Admin\TerimaEventController;
+use App\Http\Controllers\Admin\DataEventController;
+use App\Http\Controllers\Admin\TerimaUsahaController;
+use App\Http\Controllers\Admin\DataUsahaController;
+use App\Http\Controllers\Admin\ProfilAdminController;
 use App\Http\Controllers\LandingPage\HomeController;
 use App\Http\Controllers\LandingPage\AboutController;
 use App\Http\Controllers\LandingPage\ArticelController;
@@ -34,35 +39,35 @@ Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lu
 
 
 // Route Beranda
-Route::get('admin/beranda', [FrontendController::class, 'index'])->name('admin.beranda');
+Route::get('admin/beranda', [BerandaAdminController::class, 'index'])->name('admin.beranda');
 
 // Route Artikel
-Route::get('/artikel', [FrontendController::class, 'artikel'])->name('artikel');
-Route::get('/artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
-Route::get('/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+Route::get('admin/artikel', [ArtikelController::class, 'index'])->name('artikel');
+Route::get('admin/artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
+Route::get('admin/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
 
 // Route Terima Event
-Route::get('/terimaevent', [FrontendController::class, 'terimaevent'])->name('terimaevent');
-Route::get('terimaevent/event/info', [EventController::class, 'info'])->name('event.info');
+Route::get('admin/terimaevent', [TerimaEventController::class, 'index'])->name('terimaevent');
+Route::get('admin/terimaevent/info', [TerimaEventController::class, 'info'])->name('event.info');
 
 // Route Data Event
-Route::get('/dataevent', [FrontendController::class, 'dataevent'])->name('dataevent');
-Route::get('dataevent/event/info', [EventController::class, 'info'])->name('event.info');
+Route::get('admin/dataevent', [DataEventController::class, 'index'])->name('dataevent');
+Route::get('admin/dataevent/info', [DataEventController::class, 'info'])->name('event.info');
 
 // Route Terima Usaha
-Route::get('/terimausaha', [FrontendController::class, 'terimausaha'])->name('terimausaha');
-Route::get('terimausaha/usaha/info', [UsahaController::class, 'info'])->name('usaha.info');
+Route::get('admin/terimausaha', [TerimaUsahaController::class, 'index'])->name('terimausaha');
+Route::get('admin/terimausaha/info', [TerimaUsahaController::class, 'info'])->name('usaha.info');
 
 // Route Data Usaha
-Route::get('/datausaha', [FrontendController::class, 'datausaha'])->name('datausaha');
-Route::get('datausaha/usaha/info', [UsahaController::class, 'info'])->name('usaha.info');
+Route::get('admin/datausaha', [DataUsahaController::class, 'index'])->name('datausaha');
+Route::get('admin/datausaha/info', [DataUsahaController::class, 'info'])->name('usaha.info');
 
 // Route Data Sektor
-Route::get('/datasektor', [FrontendController::class, 'datasektor'])->name('datasektor');
-Route::get('/datasektor/sektor/info', [SektorController::class, 'info'])->name('sektor.info');
+Route::get('admin/datasektor', [DataSektorController::class, 'index'])->name('datasektor');
+Route::get('admin/datasektor/info', [DataSektorController::class, 'info'])->name('sektor.info');
 
 // Route Profil
-Route::get('admin/profil', [FrontendController::class, 'profil'])->name('admin.profil');
+Route::get('admin/profil', [ProfilAdminController::class, 'index'])->name('admin.profil');
 
 
 

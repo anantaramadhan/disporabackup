@@ -66,9 +66,18 @@
                     <img src="path_to_image.jpg" alt="Foto Event" width="100" class="mt-2">
                   </div>
 
-                  <div class="col-12 mt-4">
-                    <button type="submit" class="btn btn-primary w-100">Simpan Perubahan</button>
+                        <!-- Tombol Aksi -->
+                <div class="d-flex justify-content-between">
+                  <!-- Tombol Batal dan Simpan -->
+                  <div class="ms-auto">
+                    <button type="reset" class="btn btn-danger me-2">
+                      <i class="bi bi-x-circle"></i> Batal
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                      <i class="bi bi-check-lg"></i> Simpan
+                    </button>
                   </div>
+                </div>
                 </div>
               </form>
 
