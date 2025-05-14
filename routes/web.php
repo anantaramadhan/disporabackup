@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DataSektorController;
+use App\Http\Controllers\Popup\ErrorController;
+use App\Http\Controllers\Popup\PopUpController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\SektorController;
@@ -68,7 +70,11 @@ Route::get('admin/datasektor/info', [DataSektorController::class, 'info'])->name
 
 // Route Profil
 Route::get('admin/profil', [ProfilAdminController::class, 'index'])->name('admin.profil');
-Route::get('admin/error', [ProfilAdminController::class, 'error'])->name('error.404');
+
+
+//Route Pop Up
+Route::get('admin/error', [PopUpController::class, 'error'])->name('popup.404');
+
 
 
 

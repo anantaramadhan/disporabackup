@@ -9,7 +9,7 @@
   @include('pengusaha.layouts.header')
   @include('pengusaha.layouts.sidebar')
 
-  <main id="main" class="main" style="margin-buttom: 35px;">
+  <main id="main" class="main" style="margin-bottom: 35px;">
     <div class="pagetitle">
       <h1>Tambah Produk</h1>
     </div><!-- End Page Title -->
@@ -22,7 +22,7 @@
             <div class="card-body">
               <h5 class="card-title">Form Tambah Produk</h5>
 
-              <form action="{{ url('/produk/tambah') }}" method="POST" enctype="multipart/form-data">
+              <form action="{{ url('/produk/tambah') }}" method="POST" enctype="multipart/form-data" id="addProductForm">
                 @csrf
 
                 <div class="row">
@@ -59,6 +59,66 @@
     </section>
 
   </main><!-- End #main -->
+
+  <!-- Modal Berhasil Tambah Produk -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Berhasil Tambah Produk</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Produk Anda telah berhasil ditambahkan.
+        </div>
+        <div class="modal-footer">
+          <a href="{{ route('produkusaha') }}" class="btn btn-success">Kembali ke Daftar Produk</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Gagal Tambah Produk -->
+  <div class="modal fade" id="failureModal" tabindex="-1" aria-labelledby="failureModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="failureModalLabel">Gagal Tambah Produk</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Terjadi kesalahan saat menambahkan produk. Silakan coba lagi.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script untuk Modal -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Menangani form submission
+    document.getElementById("addProductForm").onsubmit = function (event) {
+      event.preventDefault();
+
+      // Simulasikan proses penyimpanan dengan random (gantilah dengan proses sebenarnya)
+      let success = Math.random() > 0.5;  // Randomly simulate success or failure
+
+      if (success) {
+        // Menampilkan modal Berhasil Tambah Produk
+        var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+      } else {
+        // Menampilkan modal Gagal Tambah Produk
+        var failureModal = new bootstrap.Modal(document.getElementById('failureModal'));
+        failureModal.show();
+      }
+    };
+  </script>
 
 </body>
 

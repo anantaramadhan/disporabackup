@@ -22,7 +22,7 @@
               <h5 class="card-title">Form Edit Event</h5>
 
               <!-- Form untuk edit event -->
-              <form action="#" method="POST" enctype="multipart/form-data">
+              <form action="#" method="POST" enctype="multipart/form-data" id="editEventForm">
                 @csrf
                 @method('PUT') <!-- Menggunakan method PUT untuk update -->
 
@@ -66,18 +66,18 @@
                     <img src="path_to_image.jpg" alt="Foto Event" width="100" class="mt-2">
                   </div>
 
-                        <!-- Tombol Aksi -->
-                <div class="d-flex justify-content-between">
-                  <!-- Tombol Batal dan Simpan -->
-                  <div class="ms-auto">
-                    <button type="reset" class="btn btn-danger me-2">
-                      <i class="bi bi-x-circle"></i> Batal
-                    </button>
-                    <button type="submit" class="btn btn-success">
-                      <i class="bi bi-check-lg"></i> Simpan
-                    </button>
+                  <!-- Tombol Aksi -->
+                  <div class="d-flex justify-content-between">
+                    <!-- Tombol Batal dan Simpan -->
+                    <div class="ms-auto">
+                      <button type="reset" class="btn btn-danger me-2">
+                        <i class="bi bi-x-circle"></i> Batal
+                      </button>
+                      <button type="submit" class="btn btn-success">
+                        <i class="bi bi-check-lg"></i> Simpan
+                      </button>
+                    </div>
                   </div>
-                </div>
                 </div>
               </form>
 
@@ -88,6 +88,43 @@
     </section>
 
   </main><!-- End #main -->
+
+  <!-- Modal Berhasil Simpan -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Berhasil Simpan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Event Anda telah berhasil disimpan.
+        </div>
+        <div class="modal-footer">
+          <a href="{{ route('eventmu.edit') }}" class="btn btn-success">Kembali ke Daftar Event</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Gagal Simpan -->
+  <div class="modal fade" id="failureModal" tabindex="-1" aria-labelledby="failureModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="failureModalLabel">Gagal Simpan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Terjadi kesalahan saat menyimpan event Anda. Silakan coba lagi.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" async defer></script>
@@ -137,6 +174,24 @@
         }
       });
     }
+
+    // Handle form submission
+    document.getElementById("editEventForm").onsubmit = function (event) {
+      event.preventDefault();
+
+      // Simulate success or failure after form submission (Replace with real validation or API request)
+      let success = Math.random() > 0.5;  // Randomly simulate success or failure
+
+      if (success) {
+        // Show success modal
+        var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+      } else {
+        // Show failure modal
+        var failureModal = new bootstrap.Modal(document.getElementById('failureModal'));
+        failureModal.show();
+      }
+    };
   </script>
 
 </body>
