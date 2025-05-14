@@ -5,8 +5,6 @@ use App\Http\Controllers\Popup\ErrorController;
 use App\Http\Controllers\Popup\PopUpController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ArtikelController;
-use App\Http\Controllers\Admin\SektorController;
-use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LupaSandiController;
@@ -66,6 +64,8 @@ Route::get('admin/datausaha/info', [DataUsahaController::class, 'info'])->name('
 
 // Route Data Sektor
 Route::get('admin/datasektor', [DataSektorController::class, 'index'])->name('datasektor');
+Route::get('admin/datasektor/tambah', [DataSektorController::class, 'tambah'])->name('sektor.tambah');
+Route::get('admin/datasektor/edit', [DataSektorController::class, 'edit'])->name('sektor.edit');
 Route::get('admin/datasektor/info', [DataSektorController::class, 'info'])->name('sektor.info');
 
 // Route Profil

@@ -61,7 +61,7 @@
                   <tr>
                     <td>2</td> <!-- Nomor -->
                     <td class="d-flex align-items-center">
-                      <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 1" class="img-fluid me-3" width="50">
+                      <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 2" class="img-fluid me-3" width="50">
                       <span>Konser Musik 2025</span>
                     </td>
                     <td>15 Juli 2025</td>
@@ -75,7 +75,7 @@
                   <tr>
                     <td>3</td> <!-- Nomor -->
                     <td class="d-flex align-items-center">
-                      <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 1" class="img-fluid me-3" width="50">
+                      <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 3" class="img-fluid me-3" width="50">
                       <span>Seminar Teknologi 2025</span>
                     </td>
                     <td>22 Agustus 2025</td>
@@ -89,7 +89,7 @@
                   <tr>
                     <td>4</td> <!-- Nomor -->
                     <td class="d-flex align-items-center">
-                      <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 1" class="img-fluid me-3" width="50">
+                      <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 4" class="img-fluid me-3" width="50">
                       <span>Expo Pendidikan 2025</span>
                     </td>
                     <td>5 September 2025</td>
@@ -109,36 +109,41 @@
     </section>
   </main>
 
-  <!-- Modal Tambah Event -->
-  <div class="modal fade" id="tambahEventModal" tabindex="-1" aria-labelledby="tambahEventModalLabel" aria-hidden="true">
+  <!-- Modal Event Diterima -->
+  <div class="modal fade" id="eventAcceptedModal" tabindex="-1" aria-labelledby="eventAcceptedModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="tambahEventModalLabel">Tambah Event Baru</h5>
+          <h5 class="modal-title" id="eventAcceptedModalLabel">Event Diterima</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="namaEvent" class="form-label">Nama Event</label>
-              <input type="text" class="form-control" id="namaEvent" placeholder="Masukkan nama event">
-            </div>
-            <div class="mb-3">
-              <label for="tanggalEvent" class="form-label">Tanggal Event</label>
-              <input type="date" class="form-control" id="tanggalEvent">
-            </div>
-            <div class="mb-3">
-              <label for="namaPengaju" class="form-label">Nama Pengaju</label>
-              <input type="text" class="form-control" id="namaPengaju" placeholder="Masukkan nama pengaju">
-            </div>
-          </form>
+          Berhasil menerima event.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal Hapus Event -->
-  <!-- (Sama seperti modal Hapus sebelumnya) -->
+  <!-- Modal Event Ditolak -->
+  <div class="modal fade" id="eventRejectedModal" tabindex="-1" aria-labelledby="eventRejectedModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventRejectedModalLabel">Event Ditolak</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Event berhasil ditolak.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- JavaScript untuk Pencarian -->
   <script>
@@ -172,6 +177,24 @@
         }
       }
     }
+
+    // Menangani klik pada tombol Terima
+    const acceptButtons = document.querySelectorAll('.btn-success');
+    acceptButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        var acceptedModal = new bootstrap.Modal(document.getElementById('eventAcceptedModal'));
+        acceptedModal.show();
+      });
+    });
+
+    // Menangani klik pada tombol Tolak
+    const rejectButtons = document.querySelectorAll('.btn-danger');
+    rejectButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        var rejectedModal = new bootstrap.Modal(document.getElementById('eventRejectedModal'));
+        rejectedModal.show();
+      });
+    });
   </script>
 
 </body>

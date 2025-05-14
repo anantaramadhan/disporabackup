@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 
 @include('admin.layouts.head')
 @include('admin.layouts.scripts')
@@ -20,7 +19,7 @@
     <!-- Form Tambah Artikel -->
     <div class="card">
       <div class="card-body">
-        <form method="POST" action="#" enctype="multipart/form-data">
+        <form method="POST" action="#" enctype="multipart/form-data" id="editArticleForm">
           <!-- Judul Artikel -->
           <div class="mb-3">
             <label for="judul" class="form-label">Judul Artikel</label>
@@ -46,9 +45,7 @@
           </div>
 
           <!-- Tombol Aksi -->
-          <!-- Tombol Aksi -->
           <div class="d-flex justify-content-between">
-            <!-- Tombol Batal dan Simpan -->
             <div class="ms-auto">
               <button type="reset" class="btn btn-danger me-2">
                 <i class="bi bi-x-circle"></i> Batal
@@ -63,5 +60,67 @@
     </div>
 
   </main>
+
+  <!-- Modal Berhasil Simpan -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Berhasil Simpan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Artikel Anda berhasil disimpan.
+        </div>
+        <div class="modal-footer">
+          <a href="{{ route('artikel') }}" class="btn btn-success">Kembali ke Artikel</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Gagal Simpan -->
+  <div class="modal fade" id="failureModal" tabindex="-1" aria-labelledby="failureModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="failureModalLabel">Gagal Simpan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Terjadi kesalahan saat menyimpan artikel. Silakan coba lagi.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script untuk Modal -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Menangani form submission
+    document.getElementById("editArticleForm").onsubmit = function (event) {
+      event.preventDefault();
+
+      // Simulasikan proses penyimpanan dengan random (gantilah dengan proses sebenarnya)
+      let success = Math.random() > 0.5;  // Randomly simulate success or failure
+
+      if (success) {
+        // Menampilkan modal Berhasil Simpan
+        var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+      } else {
+        // Menampilkan modal Gagal Simpan
+        var failureModal = new bootstrap.Modal(document.getElementById('failureModal'));
+        failureModal.show();
+      }
+    };
+  </script>
+
 </body>
+
 </html>

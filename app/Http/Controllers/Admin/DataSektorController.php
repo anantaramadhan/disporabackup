@@ -12,6 +12,17 @@ class DataSektorController extends Controller
         return view('admin.datasektor');
     }
 
+    public function tambah()
+    {
+        // Kembalikan tampilan untuk form info usaha
+        return view('admin.sektor.tambah');
+    }
+
+     public function edit()
+    {
+        // Kembalikan tampilan untuk form info usaha
+        return view('admin.sektor.edit');
+    }
 
     public function info()
     {

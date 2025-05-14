@@ -56,7 +56,7 @@
 
     <!-- Menu Data Sektor -->
     <li class="nav-item">
-      <a class="nav-link @if(request()->is('admin/datasektor','admin/datasektor/info')) active @else collapsed @endif" href="{{ route('datasektor') }}">
+      <a class="nav-link @if(request()->is('admin/datasektor','admin/datasektor/info','admin/datasektor/tambah','admin/datasektor/edit')) active @else collapsed @endif" href="{{ route('datasektor') }}">
         <i class="bi bi-briefcase"></i>
         <span>Data Sektor</span>
       </a>

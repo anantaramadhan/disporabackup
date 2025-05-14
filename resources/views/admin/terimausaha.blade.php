@@ -21,7 +21,7 @@
             <div class="card-body pt-4">
               <!-- Kolom Pencarian Terpisah -->
               <div class="d-flex justify-content-between mb-3">
-                <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Usaha..." onkeyup="searchTable()">
+                <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Event..." onkeyup="searchTable()">
                 <!-- Button Filter -->
                 <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="bi bi-funnel"></i> Filter
@@ -32,68 +32,57 @@
                 </div>
               </div>
 
-              <!-- Tabel Data Usaha -->
-              <table class="table table-hover" id="usahaTable">
+              <!-- Tabel Data Event -->
+              <table class="table table-hover" id="eventTable">
                 <thead>
                   <tr>
-                    <th>#</th> <!-- Kolom Nomor -->
+                    <th>#</th>
                     <th>Nama Usaha</th>
                     <th>Pengelola</th>
                     <th>Nomor Telp</th>
                     <th>Alamat</th>
-                    <th>Sosial Media</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td> <!-- Nomor -->
-                    <td>PT Hus Creative</td>
+                    <td>1</td>
+                    <td class="d-flex align-items-center">
+                      <span>PT Hus Creative</span>
+                    </td>
                     <td>Hermawan</td>
-                    <td>0965748398475</td>
-                    <td>Ds Bajulan, Kecamatan Ngetos, Kab Nganjuk</td>
-                    <td>Hus_Creative</td>
+                    <td>67657676676767</td>
+                    <td>Ngluyu</td>
                     <td>
-                      <a href="{{ route('usaha.info') }}" class="btn btn-sm btn-primary">Info</a>
+                      <a href="{{ route('event.info') }}" class="btn btn-sm btn-primary">Info</a>
                       <button class="btn btn-sm btn-danger">Tolak</button>
                       <button class="btn btn-sm btn-success">Terima</button>
                     </td>
                   </tr>
                   <tr>
-                    <td>2</td> <!-- Nomor -->
-                    <td>Kriya.IN</td>
-                    <td>Saputra w</td>
-                    <td>9678454354355</td>
-                    <td>Ds Bajulan, Kecamatan Ngetos, Kab Nganjuk</td>
-                    <td>KriyaIn.Indo</td>
+                    <td>2</td>
+                    <td class="d-flex align-items-center">
+                     <span>PT Hus Creative</span>
+                    </td>
+                    <td>Hermawan</td>
+                    <td>67657676676767</td>
+                    <td>Ngluyu</td>
                     <td>
-                      <a href="{{ route('usaha.info') }}" class="btn btn-sm btn-primary">Info</a>
+                      <a href="{{ route('event.info') }}" class="btn btn-sm btn-primary">Info</a>
                       <button class="btn btn-sm btn-danger">Tolak</button>
                       <button class="btn btn-sm btn-success">Terima</button>
                     </td>
                   </tr>
                   <tr>
-                    <td>3</td> <!-- Nomor -->
-                    <td>UD Sukses Jaya</td>
-                    <td>Budi</td>
-                    <td>085123456789</td>
-                    <td>Jl. Merdeka No. 12</td>
-                    <td>SuksesJaya</td>
-                    <td>
-                      <a href="{{ route('usaha.info') }}" class="btn btn-sm btn-primary">Info</a>
-                      <button class="btn btn-sm btn-danger">Tolak</button>
-                      <button class="btn btn-sm btn-success">Terima</button>
+                    <td>3</td>
+                    <td class="d-flex align-items-center">
+                       <span>PT Hus Creative</span>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>4</td> <!-- Nomor -->
-                    <td>IndoTech Solutions</td>
-                    <td>Rani</td>
-                    <td>081298765432</td>
-                    <td>Jl. Soekarno No. 8</td>
-                    <td>IndoTechSol</td>
+                    <td>Hermawan</td>
+                    <td>67657676676767</td>
+                    <td>Ngluyu</td>
                     <td>
-                      <a href="{{ route('usaha.info') }}" class="btn btn-sm btn-primary">Info</a>
+                      <a href="{{ route('event.info') }}" class="btn btn-sm btn-primary">Info</a>
                       <button class="btn btn-sm btn-danger">Tolak</button>
                       <button class="btn btn-sm btn-success">Terima</button>
                     </td>
@@ -107,48 +96,41 @@
     </section>
   </main>
 
-  <!-- Modal Tambah Usaha -->
-  <div class="modal fade" id="tambahUsahaModal" tabindex="-1" aria-labelledby="tambahUsahaModalLabel" aria-hidden="true">
+  <!-- Modal Event Diterima -->
+  <div class="modal fade" id="eventAcceptedModal" tabindex="-1" aria-labelledby="eventAcceptedModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="tambahUsahaModalLabel">Tambah Usaha Baru</h5>
+          <h5 class="modal-title" id="eventAcceptedModalLabel">Event Diterima</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="namaUsaha" class="form-label">Nama Usaha</label>
-              <input type="text" class="form-control" id="namaUsaha" placeholder="Masukkan nama usaha">
-            </div>
-            <div class="mb-3">
-              <label for="deskripsiUsaha" class="form-label">Deskripsi Usaha</label>
-              <textarea class="form-control" id="deskripsiUsaha" rows="3" placeholder="Masukkan deskripsi usaha"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="nomorTelp" class="form-label">Nomor Telepon</label>
-              <input type="text" class="form-control" id="nomorTelp" placeholder="Masukkan nomor telepon">
-            </div>
-            <div class="mb-3">
-              <label for="alamat" class="form-label">Alamat</label>
-              <textarea class="form-control" id="alamat" rows="3" placeholder="Masukkan alamat usaha"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="sosialMedia" class="form-label">Sosial Media</label>
-              <input type="text" class="form-control" id="sosialMedia" placeholder="Masukkan sosial media usaha">
-            </div>
-          </form>
+          Berhasil menerima event.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-          <button type="button" class="btn btn-primary">Simpan</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal Hapus Usaha -->
-  <!-- (Sama seperti modal Hapus sebelumnya) -->
+  <!-- Modal Event Ditolak -->
+  <div class="modal fade" id="eventRejectedModal" tabindex="-1" aria-labelledby="eventRejectedModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventRejectedModalLabel">Event Ditolak</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Event berhasil ditolak.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- JavaScript untuk Pencarian -->
   <script>
@@ -156,7 +138,7 @@
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("searchInput");
       filter = input.value.toLowerCase();
-      table = document.getElementById("usahaTable");
+      table = document.getElementById("eventTable");
       tr = table.getElementsByTagName("tr");
 
       for (i = 1; i < tr.length; i++) {
@@ -182,6 +164,24 @@
         }
       }
     }
+
+    // Menangani klik pada tombol Terima
+    const acceptButtons = document.querySelectorAll('.btn-success');
+    acceptButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        var acceptedModal = new bootstrap.Modal(document.getElementById('eventAcceptedModal'));
+        acceptedModal.show();
+      });
+    });
+
+    // Menangani klik pada tombol Tolak
+    const rejectButtons = document.querySelectorAll('.btn-danger');
+    rejectButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        var rejectedModal = new bootstrap.Modal(document.getElementById('eventRejectedModal'));
+        rejectedModal.show();
+      });
+    });
   </script>
 
 </body>
