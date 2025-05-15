@@ -34,6 +34,24 @@ Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('r
 //route lupa sandi 
 Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lupasandi');
 
+//CK EDITOR
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+
+Route::post('/upload-image', function (Request $request) {
+    // Validasi gambar
+    $request->validate([
+        'upload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    // Simpan gambar
+    $path = $request->file('upload')->store('images', 'public');
+
+    // Kembalikan URL gambar yang dapat digunakan oleh CKEditor
+    return response()->json([
+        'url' => Storage::url($path), // Mengembalikan URL file yang diupload
+    ]);
+});
 
 
 

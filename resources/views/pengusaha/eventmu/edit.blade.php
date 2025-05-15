@@ -52,12 +52,14 @@
                     <input type="hidden" name="latitude" id="latitude" value="-6.2088">
                     <input type="hidden" name="longitude" id="longitude" value="106.8456">
                   </div>
+                  
 
-                  <!-- Deskripsi Event -->
+                  <!-- Deskripsi Event menggunakan CKEditor -->
                   <div class="col-12 mt-3">
                     <label for="deskripsiEvent" class="form-label">Deskripsi Event</label>
                     <textarea name="deskripsi_event" class="form-control" id="deskripsiEvent" rows="4" placeholder="Masukkan deskripsi event" required>Event seni tahunan yang akan diadakan pada bulan Juni 2025.</textarea>
                   </div>
+                  
 
                   <!-- Foto Event -->
                   <div class="col-12 mt-3">
@@ -125,6 +127,28 @@
       </div>
     </div>
   </div>
+  
+   <!-- CK editor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+  <script>
+    ClassicEditor
+        .create(document.querySelector('#deskripsiEvent'), {
+            toolbar: [
+                'undo', 'redo', '|',
+                'bold', 'italic', '|',
+                'link', 'imageUpload', '|',
+                'numberedList', 'bulletedList', '|', // Menambahkan fitur penomoran dan penandaan
+                'blockQuote', 'insertTable'
+            ],
+            ckfinder: {
+                uploadUrl: '/upload-image' // Ganti dengan URL untuk menangani upload gambar
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
 
   <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" async defer></script>

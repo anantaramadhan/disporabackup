@@ -29,7 +29,8 @@
           <!-- Deskripsi -->
           <div class="mb-3">
             <label for="deskripsi" class="form-label">Deskripsi</label>
-            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" placeholder="Tulis deskripsi artikel..." required></textarea>
+            <!-- Ganti textarea dengan div untuk CKEditor -->
+            <div id="deskripsi" class="form-control" style="min-height: 150px; border: 1px solid #ccc;" required></div>
           </div>
 
           <!-- Tanggal Dibuat -->
@@ -55,6 +56,7 @@
               </button>
             </div>
           </div>
+
         </form>
       </div>
     </div>
@@ -100,6 +102,27 @@
 
   <!-- Script untuk Modal -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menambahkan CKEditor 5 -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+  <script>
+    // Inisialisasi CKEditor pada elemen dengan ID "deskripsi"
+    ClassicEditor
+      .create(document.querySelector('#deskripsi'), {
+        toolbar: [
+          'undo', 'redo', '|',
+          'bold', 'italic', '|',
+          'link', 'imageUpload', 'numberedList', 'bulletedList', '|',
+          'blockQuote', 'insertTable'
+        ],
+        ckfinder: {
+          uploadUrl: '/upload-image' // Ganti dengan URL untuk menangani upload gambar
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
 
   <script>
     // Menangani form submission

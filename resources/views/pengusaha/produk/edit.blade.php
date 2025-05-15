@@ -31,21 +31,23 @@
                                     <div class="col-12">
                                         <label for="namaProduk" class="form-label">Nama Produk</label>
                                         <input type="text" name="nama_produk" class="form-control" id="namaProduk"
-                                            placeholder="Masukkan nama produk" required>
+                                            placeholder="Produk A" required>
                                     </div>
 
                                     <!-- Harga Produk -->
                                     <div class="col-12 mt-3">
                                         <label for="hargaProduk" class="form-label">Harga Produk</label>
                                         <input type="number" name="harga_produk" class="form-control" id="hargaProduk"
-                                            placeholder="Masukkan harga produk" required>
+                                            placeholder="RP. 100.000" required>
                                     </div>
 
-                                    <!-- Deskripsi Produk -->
+                                    <!-- Deskripsi Produk dengan CKEditor -->
                                     <div class="col-12 mt-3">
                                         <label for="deskripsiProduk" class="form-label">Deskripsi Produk</label>
-                                        <textarea name="deskripsi_produk" class="form-control" id="deskripsiProduk" rows="4"
-                                            placeholder="Masukkan deskripsi produk" required></textarea>
+                                        <!-- Ganti textarea dengan div untuk CKEditor -->
+                                        <div id="deskripsiProduk" class="form-control" style="min-height: 150px; border: 1px solid #ccc;" required>Deskripsi singkat tentang Produk A. Produk ini sangat bermanfaat untuk kebutuhan harian Anda.
+
+Deskripsi lengkap tentang Produk A. Produk ini sangat bermanfaat untuk kebutuhan harian Anda, baik untuk keperluan rumah tangga maupun pribadi. Dengan fitur-fitur canggih yang dimiliki, produk ini menjadi pilihan utama untuk meningkatkan kualitas hidup Anda. Penggunaan yang mudah dan harga yang terjangkau menjadikan produk ini sangat disarankan untuk setiap keluarga.</div>
                                     </div>
 
                                     <!-- Foto Produk -->
@@ -113,6 +115,27 @@
 
     <!-- Script untuk Bootstrap (Untuk Modal dan Interaksi Lainnya) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menambahkan CKEditor 5 -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <script>
+        // Inisialisasi CKEditor pada elemen dengan ID "deskripsiProduk"
+        ClassicEditor
+            .create(document.querySelector('#deskripsiProduk'), {
+                toolbar: [
+                    'undo', 'redo', '|',
+                    'bold', 'italic', '|',
+                    'link', 'imageUpload', 'numberedList', 'bulletedList', '|',
+                    'blockQuote', 'insertTable'
+                ],
+                ckfinder: {
+                    uploadUrl: '/upload-image' // Ganti dengan URL untuk menangani upload gambar
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 
     <script>
         // Menangani form submission
