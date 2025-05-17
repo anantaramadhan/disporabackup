@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\DataSektorController;
+use App\Http\Controllers\Admin\DetailAduanController;
+use App\Http\Controllers\Admin\InformasiAduanController;
+use App\Http\Controllers\Pengusaha\PengaduanController;
 use App\Http\Controllers\Popup\ErrorController;
 use App\Http\Controllers\Popup\PopUpController;
 use Illuminate\Support\Facades\Route;
@@ -86,6 +89,11 @@ Route::get('admin/datasektor/tambah', [DataSektorController::class, 'tambah'])->
 Route::get('admin/datasektor/edit', [DataSektorController::class, 'edit'])->name('sektor.edit');
 Route::get('admin/datasektor/info', [DataSektorController::class, 'info'])->name('sektor.info');
 
+//Route Informasi aduan
+Route::get('admin/informasiaduan', [InformasiaduanController::class, 'index'])->name('informasiaduan');
+Route::get('admin/informasiaduan/detail', [DetailaduanController::class, 'index'])->name('admin.aduan.detail');
+
+
 // Route Profil
 Route::get('admin/profil', [ProfilAdminController::class, 'index'])->name('admin.profil');
 
@@ -132,6 +140,9 @@ Route::get('/pengusaha/informasiusaha/edit', [InformasiUsahaController::class, '
 Route::get('/pengusaha/produkusaha', [ProdukUsahaController::class, 'index'])->name('produkusaha');
 Route::get('/pengusaha/produkusaha/edit', [ProdukUsahaController::class, 'edit'])->name('produk.edit');
 Route::get('/pengusaha/produkusaha/tambah', [ProdukUsahaController::class, 'tambah'])->name('produk.tambah');
+
+//ROUTE PENGADUAN
+Route::get('/pengusaha/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan');
 
 
 //ROUTE PROFIL

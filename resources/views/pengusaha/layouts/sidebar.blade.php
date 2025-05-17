@@ -35,6 +35,14 @@
       </a>
     </li><!-- End Produk Usaha Nav -->
     
+    <!-- Menu Pengaduan -->
+    <li class="nav-item">
+      <a class="nav-link @if(Request::is('pengusaha/pengaduan')) active @else collapsed @endif" href="{{ route('pengaduan') }}">
+        <i class="bi bi-exclamation-circle"></i>
+        <span>Pengaduan</span>
+      </a>
+    </li><!-- End Pengaduan Nav -->
+
     <!-- Menu Keluar -->
     <li class="nav-item">
       <a class="nav-link @if(Request::is('pengusaha/logout')) active @else collapsed @endif" href="{{ route('logout') }}" 
