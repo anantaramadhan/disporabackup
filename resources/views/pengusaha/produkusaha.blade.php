@@ -18,6 +18,12 @@
           margin-left: -12px;  /* Geser tombol sedikit ke kiri */
           margin-top: -30px;
         }
+
+        /* CSS tambahan untuk memindahkan tombol ke sebelah kiri */
+        .card-body .btn-link {
+          text-align: left;
+          padding-left: 0; /* Menghilangkan padding default */
+        }
       </style>
     </div>
 
